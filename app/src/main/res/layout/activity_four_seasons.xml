@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.fourseasonsscreen.FourSeasonsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#25D6F9E8"
+        android:fontFamily="@font/butcherman"
+        android:text="The Four Seasons"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayoutSpring"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutSpring"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="springSeason"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayoutFall"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayoutWinter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/spring" />
+
+        <TextView
+            android:id="@+id/textViewSpring"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@color/colorScrim"
+            android:gravity="bottom|left"
+            android:paddingLeft="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/spring"
+            android:textColor="@color/myTextColor"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutWinter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="winterSeason"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayoutSummer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutSpring"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/imageViewWinter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:layout_gravity="fill"
+            app:srcCompat="@drawable/winter" />
+
+        <View
+            android:id="@+id/viewWinter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorScrim" />
+
+        <TextView
+            android:id="@+id/textViewWinter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:gravity="center"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/winter"
+            android:textColor="@color/myTextColor"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutFall"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="fallSeason"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayoutSummer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutSpring">
+
+        <ImageView
+            android:id="@+id/imageViewFall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:layout_gravity="fill"
+            app:srcCompat="@drawable/fall" />
+
+        <TextView
+            android:id="@+id/textViewFall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorScrim"
+            android:gravity="left"
+            android:paddingLeft="4dp"
+            android:paddingTop="4dp"
+            android:text="@string/fall"
+            android:textColor="@color/myTextColor"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutSummer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="summerSeason"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutFall"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutWinter">
+
+        <ImageView
+            android:id="@+id/imageViewSummer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:layout_gravity="fill"
+            app:srcCompat="@drawable/summer" />
+
+        <View
+            android:id="@+id/viewSummer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorScrim" />
+
+        <TextView
+            android:id="@+id/textViewSummer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/summer"
+            android:textColor="@color/myTextColor"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+</android.support.constraint.ConstraintLayout>

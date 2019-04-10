@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.mainscreen.MainActivity" >
+
+    <Button
+        android:id="@+id/buttonFourSeasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getFourSeasons"
+        android:text="@string/goToFourSeasons" />
+
+    <Button
+        android:id="@+id/buttonColors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getColorsActivity"
+        android:text="@string/goToColors" />
+
+    <Button
+        android:id="@+id/buttonTextDecoration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getTextDecoration"
+        android:text="@string/goToTextDecoration" />
+
+    <Button
+        android:id="@+id/buttonDaysList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getDaysList"
+        android:text="@string/goToDaysList" />
+
+    <Button
+        android:id="@+id/buttonSwipeTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getSwipeTabs"
+        android:text="@string/goToSwipeTabs" />
+
+    <Button
+        android:id="@+id/buttonCoordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getCoordinator"
+        android:text="@string/goToCoordinator" />
+
+    <Button
+        android:id="@+id/buttonRegistrationForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getRegistrationForm"
+        android:text="@string/goToRegistrationForm" />
+</LinearLayout>

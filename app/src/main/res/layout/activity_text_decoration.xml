@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.textdecorationscreen.TextDecorationActivity">
+
+    <EditText
+        android:id="@+id/editTextDecoration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewDecoration"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="TEXT"
+        android:inputType="textPersonName"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/buttonTextDecoration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextDecoration"
+        android:layout_alignRight="@+id/editTextDecoration"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="false"
+        android:onClick="convertText"
+        android:text="@string/convertText" />
+
+    <TextView
+        android:id="@+id/textViewDecoration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/eater"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#62BCDF"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+</RelativeLayout>

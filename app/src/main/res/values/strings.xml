@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">PlayWithLayouts</string>
+    <string name="spring">Spring</string>
+    <string name="winter">Winter</string>
+    <string name="fall">Fall</string>
+    <string name="summer">Summer</string>
+    <string name="goToFourSeasons">Go To Four Seasons</string>
+    <string name="goToColors">Go To Colors</string>
+    <string name="convertText">Convert</string>
+    <string name="goToTextDecoration">Go To Text Decoration</string>
+    <string name="goToDaysList">Go To Days List</string>
+    <string name="goToSwipeTabs">Go To Swipe Tabs</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="goToCoordinator">Go To Coordinator</string>
+    <string name="goToRegistrationForm">Go To Registration Form</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
+    <string name="signup">Sign Up</string>
+
+
+    <string name="importImg">Import Image</string>
+    <string name="gallery">Gallery</string>
+    <string name="slideshow">Show Slide</string>
+    <string name="tools">Tools</string>
+
+    <string name="Myheadertitle">My header title</string>
+</resources>
