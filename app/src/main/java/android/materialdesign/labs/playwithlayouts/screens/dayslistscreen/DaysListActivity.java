@@ -1,5 +1,7 @@
 package android.materialdesign.labs.playwithlayouts.screens.dayslistscreen;
 
+import android.animation.ObjectAnimator;
+import android.app.ActivityOptions;
 import android.materialdesign.labs.playwithlayouts.R;
 import android.materialdesign.labs.playwithlayouts.model.Day;
 import android.materialdesign.labs.playwithlayouts.model.DayAdapter;
@@ -18,7 +20,9 @@ import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -36,18 +40,51 @@ public class DaysListActivity extends AppCompatActivity implements DaysListContr
     Toolbar toolbar;
 
     FloatingActionButton fab;
+    Animation fabBtnAnimation;
+    ObjectAnimator fabBtnobAnimation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days_list);
         initComponents();
+
+        recyclerView = findViewById(R.id.recyclerViewDays);
+        presenter = new DaysListPresenterImpl(this);
+        days = presenter.getData(days);
+        presenter.setData(days);
+    }
+
+    private void initComponents(){
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView = findViewById(R.id.navView);
+        toolbar = findViewById(R.id.nav_toolbar);
         fab = findViewById(R.id.fab);
+        setSupportActionBar(toolbar);
+        setMenu();
+
+        setAnimations();
+        setListeners();
+
+    }
+
+    private void setAnimations(){
+        fabBtnAnimation = AnimationUtils.loadAnimation(this,R.anim.raised_btn);
+
+        fabBtnobAnimation = ObjectAnimator.ofFloat(fab,"x",800);
+        fabBtnobAnimation.setRepeatCount(1);
+        fabBtnobAnimation.setRepeatMode(ObjectAnimator.REVERSE);
+        fabBtnobAnimation.setDuration(2000);
+    }
+    private void setListeners(){
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
+                fab.startAnimation(fabBtnAnimation);
                 LinearLayout root = (LinearLayout) findViewById( R.id.LinearLayoutFab);
                 DisplayMetrics dm = new DisplayMetrics();
                 DaysListActivity.this.getWindowManager().getDefaultDisplay().getMetrics( dm );
@@ -66,23 +103,6 @@ public class DaysListActivity extends AppCompatActivity implements DaysListContr
                 view.startAnimation(anim);
             }
         });
-        recyclerView = findViewById(R.id.recyclerViewDays);
-        presenter = new DaysListPresenterImpl(this);
-        days = presenter.getData(days);
-        presenter.setData(days);
-    }
-
-    private void initComponents(){
-        drawerLayout = findViewById(R.id.drawerLayout);
-        navigationView = findViewById(R.id.navView);
-        toolbar = findViewById(R.id.nav_toolbar);
-        setSupportActionBar(toolbar);
-        setMenu();
-        setListeners();
-
-    }
-
-    private void setListeners(){
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
